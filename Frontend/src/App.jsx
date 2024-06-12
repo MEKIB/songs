@@ -1,6 +1,8 @@
 import React from 'react'
 import { ThemeProvider } from '@emotion/react'
 import SongList from './components/SongList';
+import {Provider} from 'react-redux'
+import store from './redux/store'
 const theme = {
   colors: {
     primary: "#007bff",
@@ -14,13 +16,15 @@ const theme = {
   fonts: {
     body: "Arial, sans-serif",
   },
-};
-// Wrap your application with ThemeProvider and pass your theme object as a prop
+}
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <SongList/>
-    </ThemeProvider>
+    <Provider store={store}>
+       <ThemeProvider theme={theme}>
+          <SongList/>
+       </ThemeProvider>
+    </Provider>
+    
   );
 };
 
