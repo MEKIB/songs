@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from '@emotion/react'
 import SongList from './components/SongList';
 import {Provider} from 'react-redux'
-import store from './redux/store'
+import store from './redux/store.jsx'
 const theme = {
   colors: {
     primary: "#007bff",
